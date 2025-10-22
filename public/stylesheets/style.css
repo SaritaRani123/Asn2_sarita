@@ -1,0 +1,115 @@
+/* --- Global Styles --- */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #d5d5d5;
+  margin: 0;
+}
+
+header, footer {
+  background-color: #5d7d8e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+h1 {
+  color: #0d0e0f;
+  text-align: center;
+  font-size: 30px;
+}
+#content {
+  background-color: white;
+  /* text-align: center; */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 1200px;
+}
+
+/* --- Tile Layout for Search/All Data Results --- */
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tile {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.tile img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* --- Links Styling --- */
+a {
+  text-decoration: none;
+  display: inline-block;
+  background-color: #5d7d8e; 
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 5px;
+  transition: background-color 0.2s;
+}
+
+a:hover {
+  background-color: #495969; 
+}
+
+/* --- Forms --- */
+form {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 6px 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5d7d8e;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #495969;
+}
+
+/* --- Error Messages --- */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+ul li {
+  color: red;
+}
+  /* For highlighting empty names */
+  .highlight-row {
+    background-color: #ffe5e5; 
+  }

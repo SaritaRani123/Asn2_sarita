@@ -1,0 +1,49 @@
+<a href="/">Go Back Home</a>
+<a href="/allData">View All Data</a>
+<a href="/viewData">View All Data(Table View)</a>
+<h1>{{title}}</h1>
+
+<div style="border:1px solid #ccc; padding:15px; margin-bottom:20px;">
+  <h2>{{{nameOrNA data.NAME}}}</h2>
+  <p><strong>ID:</strong> {{#if data.id}}{{data.id}}{{else}}N/A{{/if}}</p>
+  <p><strong>Host Name:</strong> {{#if (get data "host name")}}{{get data "host name"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Host ID:</strong> {{#if (get data "host id")}}{{get data "host id"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Host Verified:</strong> {{#if data.host_identity_verified}}{{data.host_identity_verified}}{{else}}N/A{{/if}}</p>
+  <p><strong>Neighbourhood Group:</strong> {{#if (get data "neighbourhood group")}}{{get data "neighbourhood group"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Neighbourhood:</strong> {{#if data.neighbourhood}}{{data.neighbourhood}}{{else}}N/A{{/if}}</p>
+  <p><strong>Country:</strong> {{#if data.country}}{{data.country}}{{else}}N/A{{/if}} {{#if (get data "country code")}}{{get data "country code"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Room Type:</strong> {{#if (get data "room type")}}{{get data "room type"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Construction Year:</strong> {{#if (get data "Construction year")}}{{get data "Construction year"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Price:</strong> {{#if data.price}}{{data.price}}{{else}}N/A{{/if}}</p>
+  <p><strong>Service Fee:</strong> {{#if (get data "service fee")}}{{get data "service fee"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Minimum Nights:</strong> {{#if (get data "minimum nights")}}{{get data "minimum nights"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Number of Reviews:</strong> {{#if (get data "number of reviews")}}{{get data "number of reviews"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Last Review:</strong> {{#if (get data "last review")}}{{get data "last review"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Reviews per Month:</strong> {{#if (get data "reviews per month")}}{{get data "reviews per month"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Review Rate Number:</strong> {{#if (get data "review rate number")}}{{get data "review rate number"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Calculated Host Listings Count:</strong> {{#if (get data "calculated host listings count")}}{{get data "calculated host listings count"}}{{else}}N/A{{/if}}</p>
+  <p><strong>Availability 365:</strong> {{#if (get data "availability 365")}}{{get data "availability 365"}}{{else}}N/A{{/if}}</p>
+  <p><strong>House Rules:</strong> {{#if data.house_rules}}{{data.house_rules}}{{else}}N/A{{/if}}</p>
+  <p><strong>License:</strong> {{#if data.license}}{{data.license}}{{else}}N/A{{/if}}</p>
+  <p><strong>Property Type:</strong> {{#if data.property_type}}{{data.property_type}}{{else}}N/A{{/if}}</p>
+
+  <div>
+    <strong>Thumbnail:</strong><br>
+    {{#if data.thumbnail}}
+      <img src="{{data.thumbnail}}" width="300">
+    {{else}}
+      N/A
+    {{/if}}
+  </div>
+
+  <div>
+    <strong>Images:</strong><br>
+    {{#if data.images}}
+      {{#each data.images}}
+        <img src="{{this}}" width="200" style="margin:5px;">
+      {{/each}}
+    {{else}}
+      N/A
+    {{/if}}
+  </div>
+</div>

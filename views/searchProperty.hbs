@@ -1,0 +1,16 @@
+<a href="/">Go Back Home</a>
+<h1>{{title}}</h1>
+
+{{#if errors}}
+  <ul style="color:red;">
+    {{#each errors}}
+      <li>{{msg}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<form method="POST" action="/searchProperty">
+  <label for="property_id">Enter Property ID:</label>
+  <input type="text" name="property_id" id="property_id" placeholder="e.g. 1056014">
+  <button type="submit">Search</button>
+</form>

@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+<a href="/">Back to Home</a>
+<a href="/viewData">View All Data</a>
+
+<form action="/viewData/price" method="POST" style="max-width:400px; margin-top:20px;">
+  <div style="margin-bottom:15px;">
+    <label for="minPrice"><strong>Minimum Price ($):</strong></label><br>
+    <input type="number" name="minPrice" id="minPrice" step="0.01" min="0" required
+           style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+  </div>
+
+  <div style="margin-bottom:15px;">
+    <label for="maxPrice"><strong>Maximum Price ($):</strong></label><br>
+    <input type="number" name="maxPrice" id="maxPrice" step="0.01" min="0" required
+           style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc;">
+  </div>
+
+  <button type="submit">
+    Filter
+  </button>
+</form>
+
+{{#if errors}}
+  <div style="color:red; margin-top:15px;">
+    <ul>
+      {{#each errors}}
+        <li>{{this.msg}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

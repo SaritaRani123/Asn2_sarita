@@ -1,0 +1,53 @@
+<a href="/">Go Back Home</a>
+<a href="/viewData/clean">View Clean Data</a>
+<a href="/priceFilter">Filter by Price</a>
+<h1>{{title}}</h1>
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: auto; margin-top: 20px;">
+  <thead style="background-color: #5e6061; color: white;">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Host Name</th>
+      <th>Neighbourhood</th>
+      <th>Price</th>
+      <th>Room Type</th>
+      <th>Image</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+      {{#isEmptyName NAME}}
+        <tr class="highlight-row">
+      {{else}}
+        <tr>
+      {{/isEmptyName}}
+          <td>{{#if id}}{{id}}{{else}}N/A{{/if}}</td>
+          <td>{{{nameOrNA NAME}}}</td>
+          <td>{{#if (get this "host name")}}{{get this "host name"}}{{else}}N/A{{/if}}</td>
+          <td>{{#if neighbourhood}}{{neighbourhood}}{{else}}N/A{{/if}}</td>
+          <td>{{#if price}}{{price}}{{else}}N/A{{/if}}</td>
+          <td>{{#if (get this "room type")}}{{get this "room type"}}{{else}}N/A{{/if}}</td>
+          <td>
+            {{#if thumbnail}}
+              <img src="{{thumbnail}}" alt="Thumbnail" width="100">
+            {{else}}
+              N/A
+            {{/if}}
+          </td>
+          <td>
+          {{#if ../useIdLink}}
+             {{#if id}}
+                 <a href="/allData/id/{{id}}">View Details</a>
+             {{else}}
+                   N/A
+             {{/if}}
+         {{else}}
+               <a href="/allData/{{@index}}">View Details</a>
+        {{/if}}
+          </td>
+
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

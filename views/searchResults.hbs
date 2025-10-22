@@ -1,0 +1,53 @@
+<a href="/">Go Back Home</a>
+<h1>{{title}}</h1>
+
+{{#each data}}
+  <div style="border:1px solid #ccc; padding:15px; margin-bottom:20px;">
+    <h2>{{{nameOrNA NAME}}}</h2>
+    <p><strong>ID:</strong> {{#if id}}{{id}}{{else}}N/A{{/if}}</p>
+    <p><strong>Host Name:</strong> {{#if (get this "host name")}}{{get this "host name"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Host ID:</strong> {{#if (get this "host id")}}{{get this "host id"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Host Verified:</strong> {{#if host_identity_verified}}{{host_identity_verified}}{{else}}N/A{{/if}}</p>
+    <p><strong>Neighbourhood Group:</strong> {{#if (get this "neighbourhood group")}}{{get this "neighbourhood group"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Neighbourhood:</strong> {{#if neighbourhood}}{{neighbourhood}}{{else}}N/A{{/if}}</p>
+    <p><strong>Latitude:</strong> {{#if lat}}{{lat}}{{else}}N/A{{/if}}</p>
+    <p><strong>Longitude:</strong> {{#if long}}{{long}}{{else}}N/A{{/if}}</p>
+    <p><strong>Country:</strong> {{#if country}}{{country}}{{else}}N/A{{/if}} ({{#if (get this "country code")}}{{get this "country code"}}{{else}}N/A{{/if}})</p>
+    <p><strong>Instant Bookable:</strong> {{#if instant_bookable}}{{instant_bookable}}{{else}}N/A{{/if}}</p>
+    <p><strong>Cancellation Policy:</strong> {{#if cancellation_policy}}{{cancellation_policy}}{{else}}N/A{{/if}}</p>
+    <p><strong>Room Type:</strong> {{#if (get this "room type")}}{{get this "room type"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Construction Year:</strong> {{#if (get this "Construction year")}}{{get this "Construction year"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Price:</strong> {{#if price}}{{price}}{{else}}N/A{{/if}}</p>
+    <p><strong>Service Fee:</strong> {{#if (get this "service fee")}}{{get this "service fee"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Minimum Nights:</strong> {{#if (get this "minimum nights")}}{{get this "minimum nights"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Number of Reviews:</strong> {{#if (get this "number of reviews")}}{{get this "number of reviews"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Last Review:</strong> {{#if (get this "last review")}}{{get this "last review"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Reviews per Month:</strong> {{#if (get this "reviews per month")}}{{get this "reviews per month"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Review Rate Number:</strong> {{#if (get this "review rate number")}}{{get this "review rate number"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Calculated Host Listings Count:</strong> {{#if (get this "calculated host listings count")}}{{get this "calculated host listings count"}}{{else}}N/A{{/if}}</p>
+    <p><strong>Availability 365:</strong> {{#if (get this "availability 365")}}{{get this "availability 365"}}{{else}}N/A{{/if}}</p>
+    <p><strong>House Rules:</strong> {{#if house_rules}}{{house_rules}}{{else}}N/A{{/if}}</p>
+    <p><strong>License:</strong> {{#if license}}{{license}}{{else}}N/A{{/if}}</p>
+    <p><strong>Property Type:</strong> {{#if property_type}}{{property_type}}{{else}}N/A{{/if}}</p>
+
+    <div>
+      <strong>Thumbnail:</strong><br>
+      {{#if thumbnail}}
+        <img src="{{thumbnail}}" alt="Thumbnail" width="300">
+      {{else}}
+        N/A
+      {{/if}}
+    </div>
+
+    <div>
+      <strong>Images:</strong><br>
+      {{#if images}}
+        {{#each images}}
+          <img src="{{this}}" alt="Property Image" width="200" style="margin:5px;">
+        {{/each}}
+      {{else}}
+        N/A
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

@@ -1,0 +1,16 @@
+<a href="/">Go Back Home</a>
+<h1>{{title}}</h1>
+
+<div class="tile-container">
+  {{#each data}}
+    <div class="tile">
+      <h2>{{{nameOrNA NAME}}}</h2>
+      <p><strong>ID:</strong> {{id}}</p>
+      <p><strong>Host Name:</strong> {{get this "host name"}}</p>
+      <p><strong>Neighbourhood:</strong> {{neighbourhood}}</p>
+      <p><strong>Country:</strong> {{country}}</p>
+      <p><strong>Price:</strong> {{price}}</p>
+      <a href="/allData/{{@index}}">View Details</a>
+    </div>
+  {{/each}}
+</div>
