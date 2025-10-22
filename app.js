@@ -15,7 +15,7 @@ const { body, validationResult } = require('express-validator');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // ---------------- MIDDLEWARE ----------------
 app.use(express.urlencoded({ extended: true }));   // parse form data
@@ -367,4 +367,10 @@ app.use(async (req, res) => {
 });
 
 // ---------------- START SERVER ----------------
-app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+// app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app;
