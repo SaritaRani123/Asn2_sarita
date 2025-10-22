@@ -1,10 +1,9 @@
 {
   "name": "asn2-sarita",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
